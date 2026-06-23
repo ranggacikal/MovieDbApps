@@ -1,7 +1,7 @@
 package com.ranggacikal.moviedbapps.core.domain.usecase
 
-import com.ranggacikal.core.domain.model.Movie
-import com.ranggacikal.core.domain.repository.MovieRepository
+import com.ranggacikal.moviedbapps.core.domain.model.Movie
+import com.ranggacikal.moviedbapps.core.domain.repository.MovieRepository
 import javax.inject.Inject
 
 class SaveFavoriteMovieUseCase @Inject constructor(
