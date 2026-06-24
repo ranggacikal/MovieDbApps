@@ -7,7 +7,9 @@ import com.ranggacikal.moviedbapps.core.data.remote.datasource.MovieRemoteDataSo
 import com.ranggacikal.moviedbapps.core.data.remote.datasource.ReviewsRemoteDataSource
 import com.ranggacikal.moviedbapps.core.data.remote.datasource.ReviewsRemoteDataSourceImpl
 import com.ranggacikal.moviedbapps.core.data.repository.MovieRepositoryImpl
+import com.ranggacikal.moviedbapps.core.data.repository.ReviewsRepositoryImpl
 import com.ranggacikal.moviedbapps.core.domain.repository.MovieRepository
+import com.ranggacikal.moviedbapps.core.domain.repository.ReviewRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -23,6 +25,11 @@ abstract class RepositoryModule {
     abstract fun bindMovieRepository(
         impl: MovieRepositoryImpl
     ): MovieRepository
+
+    @Binds
+    abstract fun bindReviewsRepository(
+        impl: ReviewsRepositoryImpl
+    ): ReviewRepository
 
     companion object {
 

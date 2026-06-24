@@ -2,6 +2,7 @@ package com.ranggacikal.moviedbapps.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.ranggacikal.moviedbapps.core.data.remote.api.MovieApi
+import com.ranggacikal.moviedbapps.core.data.remote.api.ReviewsApi
 import com.ranggacikal.moviedbapps.core.network.NetworkConstants
 import com.ranggacikal.moviedbapps.core.network.interceptor.AuthInterceptor
 import dagger.Module
@@ -55,5 +56,11 @@ object NetworkModule {
     @Singleton
     fun provideMovieApi(retrofit: Retrofit): MovieApi {
         return retrofit.create(MovieApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideReviewsApi(retrofit: Retrofit): ReviewsApi {
+        return retrofit.create(ReviewsApi::class.java)
     }
 }
