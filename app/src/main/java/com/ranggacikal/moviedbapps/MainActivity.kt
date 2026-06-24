@@ -14,8 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.ranggacikal.moviedbapps.navigation.AppNavHost
 import com.ranggacikal.moviedbapps.ui.theme.MovieDbAppsTheme
 import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
-@EntryPoint
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
