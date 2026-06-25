@@ -17,7 +17,6 @@ import com.ranggacikal.moviedbapps.feature.movie.component.TopBarView
 fun HomeScreen(
     uiState: HomeUiState,
     onMovieClick: (Movie) -> Unit,
-    onRefresh: () -> Unit,
     onRetryPopular: () -> Unit,
     onRetryNowPlaying: () -> Unit,
     onRetryTopRated: () -> Unit,
@@ -34,7 +33,6 @@ fun HomeScreen(
         HomeContent(
             uiState = uiState,
             onMovieClick = onMovieClick,
-            onRefresh = onRefresh,
             onRetryPopular = onRetryPopular,
             onRetryNowPlaying = onRetryNowPlaying,
             onRetryTopRated = onRetryTopRated,

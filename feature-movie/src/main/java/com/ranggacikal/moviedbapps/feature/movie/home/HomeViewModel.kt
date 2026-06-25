@@ -29,12 +29,6 @@ class HomeViewModel @Inject constructor(
         loadNowPlayingMovies()
     }
 
-    fun refresh() {
-        loadPopularMovie()
-        loadTopRatedMovies()
-        loadNowPlayingMovies()
-    }
-
     fun loadPopularMovie() {
         viewModelScope.launch {
             _uiState.update {

@@ -13,7 +13,6 @@ import com.ranggacikal.moviedbapps.feature.movie.component.SectionContent
 fun HomeContent(
     uiState: HomeUiState,
     onMovieClick: (Movie) -> Unit,
-    onRefresh: () -> Unit,
     onRetryPopular: () -> Unit,
     onRetryNowPlaying: () -> Unit,
     onRetryTopRated: () -> Unit,

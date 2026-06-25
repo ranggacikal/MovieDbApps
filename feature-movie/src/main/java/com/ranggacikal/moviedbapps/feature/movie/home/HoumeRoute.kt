@@ -18,7 +18,6 @@ fun HomeRoute(
     HomeScreen(
         uiState = uiState.value,
         onMovieClick = onMovieClick,
-        onRefresh = viewModel::refresh,
         onRetryPopular = viewModel::loadPopularMovie,
         onRetryNowPlaying = viewModel::loadNowPlayingMovies,
         onRetryTopRated = viewModel::loadTopRatedMovies,
