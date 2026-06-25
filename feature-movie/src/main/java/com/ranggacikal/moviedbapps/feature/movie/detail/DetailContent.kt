@@ -41,7 +41,8 @@ fun DetailContent(
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(220.dp),
+                    .height(220.dp)
+                    .padding(horizontal = 14.dp),
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Box(
