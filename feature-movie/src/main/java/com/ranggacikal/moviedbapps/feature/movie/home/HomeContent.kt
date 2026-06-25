@@ -1,6 +1,8 @@
 package com.ranggacikal.moviedbapps.feature.movie.home
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,10 +16,13 @@ fun HomeContent(
     onRefresh: () -> Unit,
     onRetryPopular: () -> Unit,
     onRetryNowPlaying: () -> Unit,
-    onRetryTopRated: () -> Unit
+    onRetryTopRated: () -> Unit,
+    padding: PaddingValues
 ) {
     LazyColumn(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(padding)
     ) {
         item {
             SectionContent(

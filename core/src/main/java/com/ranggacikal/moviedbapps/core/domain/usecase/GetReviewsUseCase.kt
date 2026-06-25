@@ -7,6 +7,6 @@ class GetReviewsUseCase @Inject constructor(
     private val repository: ReviewRepository
 ) {
 
-    suspend operator fun invoke(movieId: Int) = repository.getReviewsMovie(movieId)
+    suspend operator fun invoke(movieId: Int) = repository.getReviewsMovie(movieId).take(8)
 
 }

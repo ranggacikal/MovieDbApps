@@ -13,7 +13,9 @@ fun SectionContent(
 ) {
     when {
         state.isLoading -> {
-            LoadingDialog()
+            LoadingDialog(
+                message = "Load Movie"
+            )
         }
         state.errorMessage != null -> {
             state.errorMessage.orEmpty().let {

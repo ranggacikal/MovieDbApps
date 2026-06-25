@@ -20,4 +20,8 @@ class MovieLocalDataSourceImpl @Inject constructor(
     override suspend fun deleteMovie(movieId: Int) {
         dao.deleteMovie(movieId)
     }
+
+    override suspend fun isFavoriteMovie(movieId: Int): Boolean {
+        return dao.isFavorite(movieId)
+    }
 }

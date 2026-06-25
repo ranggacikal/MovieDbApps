@@ -8,6 +8,7 @@ import com.ranggacikal.moviedbapps.core.domain.model.Movie
 @Composable
 fun HomeRoute(
     onMovieClick: (Movie) -> Unit,
+    onFavoriteClick: () -> Unit,
     viewModel: HomeViewModel =
         hiltViewModel()
 ) {
@@ -20,6 +21,7 @@ fun HomeRoute(
         onRefresh = viewModel::refresh,
         onRetryPopular = viewModel::loadPopularMovie,
         onRetryNowPlaying = viewModel::loadNowPlayingMovies,
-        onRetryTopRated = viewModel::loadTopRatedMovies
+        onRetryTopRated = viewModel::loadTopRatedMovies,
+        onFavoriteClicked = onFavoriteClick
     )
 }

@@ -6,5 +6,8 @@ import com.ranggacikal.moviedbapps.core.domain.model.Reviews
 
 data class DetailUiState(
     val movieDetail: Movie? = null,
-    val reviews: UiState<List<Reviews>> = UiState()
+    val reviews: UiState<List<Reviews>> = UiState(),
+    val isSavingFavorite: Boolean = false,
+    val isFavoriteAlready: Boolean = false,
+    val isDeleteFavorite: Boolean = false
 )

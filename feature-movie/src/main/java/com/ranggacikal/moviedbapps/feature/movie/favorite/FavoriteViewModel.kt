@@ -14,8 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FavoriteViewModel @Inject constructor(
-    private val getFavoriteMoviesUseCase: GetFavoriteMoviesUseCase,
-    private val deleteFavoriteMovieUseCase: DeleteFavoriteMovieUseCase
+    private val getFavoriteMoviesUseCase: GetFavoriteMoviesUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(FavoriteUiState())
@@ -32,12 +31,6 @@ class FavoriteViewModel @Inject constructor(
                     it.copy(favoriteMovies = UiState(data = listFavorite))
                 }
             }
-        }
-    }
-
-    fun removeFavorite(movieId: Int) {
-        viewModelScope.launch {
-            deleteFavoriteMovieUseCase(movieId)
         }
     }
 }

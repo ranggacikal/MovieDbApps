@@ -40,4 +40,10 @@ class MovieRepositoryImpl @Inject constructor(
     override suspend fun deleteFavorite(movieId: Int) {
         local.deleteMovie(movieId)
     }
+
+    override suspend fun isFavoriteMovie(
+        movieId: Int
+    ): Boolean {
+        return local.isFavoriteMovie(movieId)
+    }
 }

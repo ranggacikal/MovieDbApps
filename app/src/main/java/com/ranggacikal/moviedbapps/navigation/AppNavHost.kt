@@ -5,7 +5,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.ranggacikal.moviedbapps.core.domain.model.Movie
+import com.ranggacikal.moviedbapps.feature.movie.detail.DetailRoute
 import com.ranggacikal.moviedbapps.feature.movie.detail.DetailScreen
+import com.ranggacikal.moviedbapps.feature.movie.favorite.FavoriteRoute
 import com.ranggacikal.moviedbapps.feature.movie.favorite.FavoriteScreen
 import com.ranggacikal.moviedbapps.feature.movie.home.HomeRoute
 import com.ranggacikal.moviedbapps.feature.movie.home.HomeScreen
@@ -34,7 +37,11 @@ fun AppNavHost(
                     navController.navigate(
                         AppDestination.DETAIL
                     )
-
+                },
+                onFavoriteClick = {
+                    navController.navigate(
+                        AppDestination.FAVORITE
+                    )
                 }
             )
         }
@@ -42,7 +49,12 @@ fun AppNavHost(
         composable(
             route = AppDestination.DETAIL
         ) {
-            DetailScreen(
+            val movie =
+                navController.previousBackStackEntry
+                    ?.savedStateHandle
+                    ?.get<Movie>(KEY_MOVIE)
+            DetailRoute(
+                movie = movie,
                 onBackClick = {
                     navController.popBackStack()
                 }
@@ -52,7 +64,16 @@ fun AppNavHost(
         composable(
             route = AppDestination.FAVORITE
         ) {
-            FavoriteScreen(
+            FavoriteRoute(
+                onMovieClick = { movie ->
+                    navController.currentBackStackEntry
+                        ?.savedStateHandle
+                        ?.set(KEY_MOVIE, movie)
+
+                    navController.navigate(
+                        AppDestination.DETAIL
+                    )
+                },
                 onBackClick = {
                     navController.popBackStack()
                 }

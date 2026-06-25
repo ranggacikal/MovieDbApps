@@ -7,6 +7,6 @@ interface ReviewRepository {
 
     suspend fun getReviewsMovie(
         movieId: Int
-    ): List<com.ranggacikal.moviedbapps.core.domain.model.Reviews>
+    ): List<Reviews>
 
 }

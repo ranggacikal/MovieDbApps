@@ -2,10 +2,14 @@ package com.ranggacikal.moviedbapps.feature.movie.component
 
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,7 +18,8 @@ import androidx.compose.ui.window.Dialog
 
 @Composable
 fun LoadingDialog(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    message: String
 ) {
     Dialog(onDismissRequest = {}) {
         ElevatedCard(
@@ -28,6 +33,16 @@ fun LoadingDialog(
             ) {
 
                 CircularProgressIndicator()
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = "Loading",
+                    style = MaterialTheme.typography.titleMedium
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = message,
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
         }
     }
